@@ -4,10 +4,93 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/animate.min.css" rel="stylesheet" type="text/css"/>
+    <link href="~/Content/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <style>
+        .app-navbar {
+            box-shadow: 0 4px 8px 0 rgba(122, 122, 122, 0.2), 0 6px 20px 0 rgba(110, 110, 110, 0.19);
+        }
+        /* Set padding to keep content from hitting the edges */
+        .body-content {
+            padding-top: 60px;
+            background-color: white;
+            z-index: 1;
+            width: 100%;
+            margin-bottom: 60px;
+        }
+
+        img {
+            z-index:-2;
+            box-shadow: 0 4px 8px 0 rgba(122, 122, 122, 0.2), 0 6px 20px 0 rgba(110, 110, 110, 0.19);
+        }
+        /* home styles */
+        @@media screen and (min-width:967px) {
+            .home .cols-home {
+                z-index:1;
+                block-size: 500px;
+            }
+        }
+
+        .home >*{
+            z-index:2;
+            text-align: center;
+        }
+
+        .home .carousel > * {
+            opacity: 0.8
+        }
+
+        .home .cols-home {
+            max-width: 100%
+        }
+
+            .home .cols-home > .col-sm {
+                margin: 20px 10px
+            }
+
+                .home .cols-home > .col-sm .lead {
+                    padding-top: 10px
+                }
+
+                .home .cols-home > .col-sm > img {
+                    display: block;
+                    margin: auto;
+                    width: 100%;
+                    margin: 10px
+                }
+
+        @@media screen and (min-width:620px ) {
+            .home .home-img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 100%;
+            }
+        }
+
+
+        /* Set width on the form input elements since they're 100% wide by default */
+        input,
+        select,
+        textarea {
+            max-width: 280px;
+        }
+
+        .app-footer {
+            padding-top: 15px;
+            text-align: center;
+            z-index: 4;
+            background-color: black;
+            color: white;
+            text-shadow: 1px 0.5px 1px #afafaf;
+            width: 100%;
+            block-size: 60px;
+            position:fixed;
+            bottom:0;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar start -->
@@ -36,7 +119,7 @@
     <div class="body-content">
         @RenderBody()
     </div>
-    <div class="app-footer" >
+    <div class="app-footer">
         <footer>
             <p>&copy; @DateTime.Now.Year - Piedra Negra</p>
         </footer>
